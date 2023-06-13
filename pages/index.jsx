@@ -1,25 +1,23 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
- import LayOut from '../components/Layout'
+import LayOut from '../components/Layout';
 import Sidebar from "@/components/Sidebar";
 import { useState } from "react";
 
 export default function Component() {
-
   const { data: session } = useSession();
   const router = useRouter();
 
   if (session && session.user) {
     return (
-      
-    <LayOut children={undefined}/>
-  
-
-      
+      <>
+        <LayOut  />
+      </>
     );
   }
 
-  const handleSignIn = () => router.push(`/auth/signin?callbackUrl=${router.asPath}`);
+  const handleSignIn = () =>
+    router.push(`/auth/signin?callbackUrl=${router.asPath}`);
 
   return (
     <>
@@ -28,12 +26,3 @@ export default function Component() {
     </>
   );
 }
-// import React from 'react'
-
-// const index = () => {
-//   return (
-//     <LayOut>cscsccccccccccccccccccccccccccccccccc</LayOut>
-//   )
-// }
-
-// export default index

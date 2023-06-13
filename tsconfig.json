@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/restricted.jsx", "components/accessToken.jsx", "pages/protected.jsx", "pages/auth/signin.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/restricted.jsx", "components/accessToken.jsx", "pages/protected.jsx", "pages/auth/signin.tsx", "pages/index.jsx"],
   "exclude": ["node_modules"]
 }
