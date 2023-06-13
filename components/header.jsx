@@ -1,8 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
- import LayOut from '../components/Layout'
-import Sidebar from "@/components/Sidebar";
-import { useState } from "react";
+
 
 export default function Component() {
 
@@ -11,14 +9,17 @@ export default function Component() {
 
   if (session && session.user) {
     return (
-      
-    <LayOut children={undefined}/>
-  
-
-      
+      <div>
+<div style={{display:"flex",backgroundColor:"red", justifyContent:"flex-end"}}>
+        Signed in as {session.user.email} <br />
+        <button  onClick={() => signOut()}>Sign out</button>
+        
+      </div>
+      </div>
     );
   }
 
+ 
   const handleSignIn = () => router.push(`/auth/signin?callbackUrl=${router.asPath}`);
 
   return (
@@ -28,12 +29,3 @@ export default function Component() {
     </>
   );
 }
-// import React from 'react'
-
-// const index = () => {
-//   return (
-//     <LayOut>cscsccccccccccccccccccccccccccccccccc</LayOut>
-//   )
-// }
-
-// export default index
